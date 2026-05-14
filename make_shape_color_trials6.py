@@ -108,8 +108,10 @@ for fixed_trial_number, plan in enumerate(trial_plan, start=1):
 
     for i in range(SET_SIZE):
         row[f"v{i+1}"] = shapes[i]
-        row[f"col{i+1}"] = mem_cols[i]
-        row[f"tcol{i+1}"] = probe_cols[i]
+
+        # These write actual RGB values, not color names
+        row[f"col{i+1}"] = PALETTE[mem_cols[i]]
+        row[f"tcol{i+1}"] = PALETTE[probe_cols[i]]
 
     rows.append(row)
 
